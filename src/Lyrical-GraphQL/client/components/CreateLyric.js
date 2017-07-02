@@ -18,7 +18,7 @@ class CreateLyric extends Component {
         content: this.state.content,
         songId: this.props.songId,
       }
-    });
+    }).then(() => this.setState({content: ''}));
   }
 
   render() {
@@ -26,7 +26,7 @@ class CreateLyric extends Component {
       <div>
         <form onSubmit={this.addLyricToSong.bind(this)}>
           <label htmlFor="lyric">Add lyric</label>
-          <input onChange={(e) => this.setState({content: e.target.value })} id="lyric" type="text"/>
+          <input value={this.state.content} onChange={(e) => this.setState({content: e.target.value })} id="lyric" type="text"/>
         </form>
       </div>
     );
