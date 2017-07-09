@@ -21,7 +21,7 @@ class Header extends React.Component {
 
     if (user) {
       return <div>
-        <a href="javascript:;" onClick={this.logout.bind(this)}>Logout</a>
+        <a className="right" href="javascript:;" onClick={this.logout.bind(this)}>Logout</a>
       </div>;
     } else {
       return (
@@ -42,7 +42,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <nav className="nav-wrapper">
+        <nav className="nav-wrapper" style={{padding: '0 20px'}}>
           {this.renderButtons()}
         </nav>
       </div>
